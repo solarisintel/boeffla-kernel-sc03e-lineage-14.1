@@ -284,7 +284,9 @@ int exynos4x12_asv_init(struct samsung_asv *asv_info)
 		}
 	}
 #endif
-
+#if defined(CONFIG_MACH_M3_JPN_DCM)
+	exynos_armclk_max = 1600000;
+#endif
 	if ((tmp >> EMA_OFFSET) & EMA_MASK)
 		exynos_dynamic_ema = true;
 	else
